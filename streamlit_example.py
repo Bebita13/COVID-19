@@ -1,12 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb  8 11:49:38 2022
-
-@author: maria
-"""
-
 import pandas as pd
 import streamlit as st
+import plotly.express as px
 
 #https://www.kaggle.com/yamqwe/omicron-covid19-variant-daily-cases
 
@@ -44,7 +38,6 @@ else:
 
 dfShow   = df.groupby(by=["date"]).sum()
 
-import plotly.express as px
 
 fig = px.line(dfShow, x=dfShow.index, y='num_sequences')
 fig.update_layout(title=titulo )
